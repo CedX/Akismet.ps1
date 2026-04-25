@@ -1,5 +1,7 @@
 using namespace System.Diagnostics.CodeAnalysis
+using module ../Blog.psm1
 using module ../Client.psm1
+using module ./Get-Version.psm1
 
 <#
 .SYNOPSIS
@@ -22,10 +24,11 @@ function New-Client {
 
 		# The user agent string to use when making requests.
 		[ValidateNotNullOrWhiteSpace()]
-		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$([Client]::Version.ToString(3))",
+		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-Version)",
 
 		# The base URL of the remote API endpoint.
-		[uri] $Uri,
+		[ValidateNotNull()]
+		[uri] $Uri = "https://rest.akismet.com/",
 
 		# Value indicating whether the client operates in test mode.
 		[switch] $WhatIf

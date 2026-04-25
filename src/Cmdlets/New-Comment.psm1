@@ -1,3 +1,4 @@
+using module ../Author.psm1
 using module ../Comment.psm1
 
 <#

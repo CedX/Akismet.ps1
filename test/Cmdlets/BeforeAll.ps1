@@ -6,30 +6,30 @@ Import-Module "$PSScriptRoot/../../Akismet.psd1"
 $client = New-AkismetClient -ApiKey $Env:AKISMET_API_KEY -Blog "https://github.com/cedx/akismet.ps1" -WhatIf
 
 # A comment with content marked as ham.
+$author = New-AkismetAuthor `
+	-IPAddress "192.168.0.1" `
+	-Name "Akismet" `
+	-Role "administrator" `
+	-Url "https://cedric-belin.fr" `
+	-UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+
 [SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
-$ham = New-AkismetComment @{
-	Author = New-AkismetAuthor @{
-		IPAddress = "192.168.0.1"
-		Name = "Akismet"
-		Role = "administrator"
-		Url = "https://cedric-belin.fr"
-		UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
-	}
-	Content = "I'm testing out the Service API."
-	Referrer = "https://www.powershellgallery.com/packages/Belin.Akismet"
-	Type = "comment"
-}
+$ham = New-AkismetComment `
+	-Author $author `
+	-Content "I'm testing out the Service API." `
+	-Referrer "https://www.powershellgallery.com/packages/Belin.Akismet" `
+	-Type "comment"
 
 # A comment with content marked as spam.
+$author = New-AkismetAuthor `
+	-Email "akismet-guaranteed-spam@example.com" `
+	-IPAddress "127.0.0.1" `
+	-Name "viagra-test-123" `
+	-UserAgent "Spam Bot/6.6.6"
+
 [SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
-$spam = New-AkismetComment @{
-	Author = New-AkismetAuthor @{
-		Email = "akismet-guaranteed-spam@example.com"
-		IPAddress = "127.0.0.1"
-		Name = "viagra-test-123"
-		UserAgent = "Spam Bot/6.6.6"
-	}
-	Content = "Spam!"
-	Date = Get-Date
-	Type = "blog-post"
-}
+$spam = New-AkismetComment `
+	-Author $author `
+	-Content "Spam!" `
+	-Date (Get-Date) `
+	-Type "blog-post"

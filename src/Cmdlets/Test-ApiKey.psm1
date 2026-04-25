@@ -1,4 +1,6 @@
 using namespace System.Net.Http
+using module ../Blog.psm1
+using module ../Client.psm1
 
 <#
 .SYNOPSIS

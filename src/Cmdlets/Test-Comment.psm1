@@ -1,4 +1,6 @@
 using namespace System.Net.Http
+using module ../CheckResult.psm1
+using module ../Client.psm1
 using module ../Comment.psm1
 
 <#

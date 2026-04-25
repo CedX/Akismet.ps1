@@ -12,6 +12,6 @@ Describe "Test-ApiKey" {
 	}
 
 	It "should return `$false for an invalid API key" {
-		"0123456789-ABCDEF" | Test-AkismetApiKey -Blog $client.Blog | Should -BeFalse
+		"0123456789AB" | Test-AkismetApiKey -Blog $client.Blog | Should -BeFalse
 	}
 }
