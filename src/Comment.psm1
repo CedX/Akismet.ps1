@@ -31,7 +31,7 @@ class Comment {
 	.SYNOPSIS
 		The UTC timestamp of the creation of the comment.
 	#>
-	[datetime] $Date
+	[Nullable[datetime]] $Date
 
 	<#
 	.SYNOPSIS
@@ -43,7 +43,7 @@ class Comment {
 	.SYNOPSIS
 		The UTC timestamp of the publication time for the post, page or thread on which the comment was posted.
 	#>
-	[datetime] $PostModified
+	[Nullable[datetime]] $PostModified
 
 	<#
 	.SYNOPSIS

@@ -2,7 +2,7 @@
 .SYNOPSIS
 	Specifies the result of a comment check.
 #>
-eunm CheckResult {
+enum CheckResult {
 	Ham
 	Spam
 	PervasiveSpam

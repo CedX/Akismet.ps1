@@ -14,7 +14,7 @@ Describe "Client" {
 		$client.IsTest = $true
 
 		# A comment with content marked as ham.
-		$author = [Author] "192.168.0.1"
+		$author = [Author]::new("192.168.0.1")
 		$author.Name = "Akismet"
 		$author.Role = [AuthorRole]::Administrator
 		$author.Url = "https://cedric-belin.fr"
@@ -26,7 +26,7 @@ Describe "Client" {
 		$ham.Type = [CommentType]::Comment
 
 		# A comment with content marked as spam.
-		$author = [Author] "127.0.0.1"
+		$author = [Author]::new("127.0.0.1")
 		$author.Email = "akismet-guaranteed-spam@example.com"
 		$author.Name = "viagra-test-123"
 		$author.UserAgent = "Spam Bot/6.6.6"

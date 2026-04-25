@@ -9,7 +9,7 @@ Describe "Blog" {
 	Context "ToHashtable" {
 		It "should return only the blog URL with a newly created instance" {
 			$hashtable = [hashtable] [Blog]::new("https://github.com/cedx/akismet.ps1")
-			$hashtable | Should -HaveCount 1
+			$hashtable.Keys | Should -HaveCount 1
 			$hashtable.blog | Should -BeExactly "https://github.com/cedx/akismet.ps1"
 		}
 
@@ -19,7 +19,7 @@ Describe "Blog" {
 			$blog.Languages = "en", "fr"
 
 			$hashtable = [hashtable] $blog
-			$hashtable | Should -HaveCount 3
+			$hashtable.Keys | Should -HaveCount 3
 			$hashtable.blog | Should -BeExactly "https://github.com/cedx/akismet.ps1"
 			$hashtable.blog_charset | Should -BeExactly "utf-8"
 			$hashtable.blog_lang | Should -BeExactly "en,fr"
