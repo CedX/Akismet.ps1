@@ -6,7 +6,7 @@ class Author {
 
 	<#
 	.SYNOPSIS
-		The author's mail address. If you set it to `"akismet-guaranteed-spam@example.com"`, Akismet will always return `true`.
+		The author's mail address. If you set it to `"akismet-guaranteed-spam@example.com"`, Akismet will always return `$true`.
 	#>
 	[ValidateNotNull()]
 	[string] $Email = ""
@@ -20,14 +20,14 @@ class Author {
 
 	<#
 	.SYNOPSIS
-		The author's name. If you set it to `"viagra-test-123"`, Akismet will always return `true`.
+		The author's name. If you set it to `"viagra-test-123"`, Akismet will always return `$true`.
 	#>
 	[ValidateNotNull()]
 	[string] $Name = ""
 
 	<#
 	.SYNOPSIS
-		The author's role. If you set it to `"administrator"`, Akismet will always return `false`.
+		The author's role. If you set it to `"administrator"`, Akismet will always return `$false`.
 	#>
 	[ValidateNotNull()]
 	[string] $Role = ""

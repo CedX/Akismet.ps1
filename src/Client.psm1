@@ -125,7 +125,7 @@ class Client {
 	.SYNOPSIS
 		Checks the API key against the service database, and returns a value indicating whether it is valid.
 	.OUTPUTS
-		`true` if the specified API key is valid, otherwise `false`.
+		`$true` if the specified API key is valid, otherwise `$false`.
 	#>
 	[bool] VerifyKey() {
 		return $this.Fetch("1.1/verify-key", @{}).Content -eq "valid"
