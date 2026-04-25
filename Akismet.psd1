@@ -14,6 +14,7 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
+		"Get-Version"
 		"New-Author"
 		"New-Blog"
 		"New-Client"
@@ -25,6 +26,7 @@
 	)
 
 	NestedModules = @(
+		"src/Cmdlets/Get-Version.psm1"
 		"src/Cmdlets/New-Author.psm1"
 		"src/Cmdlets/New-Blog.psm1"
 		"src/Cmdlets/New-Client.psm1"

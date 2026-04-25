@@ -12,8 +12,8 @@ function New-GitTag {
 		[string] $Name
 	)
 
-	git tag $Name
-	git push origin $Name
+	# git tag $Name
+	# git push origin $Name
 }
 
 <#
@@ -32,7 +32,7 @@ function Publish-PSGalleryModule {
 	$output = "$root/var/PSGallery"
 	New-Item $output -ItemType Directory | Out-Null
 	Compress-PSResource $root/var/PSModule $output
-	foreach ($package in Get-Item $output/*.nupkg) { Publish-PSResource -ApiKey $Env:PSGALLERY_API_KEY -NupkgPath $package -Repository PSGallery }
+	# foreach ($package in Get-Item $output/*.nupkg) { Publish-PSResource -ApiKey $Env:PSGALLERY_API_KEY -NupkgPath $package -Repository PSGallery }
 }
 
 <#
