@@ -2,6 +2,7 @@ using namespace Microsoft.PowerShell.Commands
 using namespace System.Net.Http
 using module ./Blog.psm1
 using module ./CheckResult.psm1
+using module ./Cmdlets/Get-Version.psm1
 using module ./Comment.psm1
 
 <#
@@ -9,12 +10,6 @@ using module ./Comment.psm1
 	The response returned by the `submit-ham` and `submit-spam` endpoints when the outcome is a success.
 #>
 [string] $Success = "Thanks for making the web a better place."
-
-<#
-.SYNOPSIS
-	The module version.
-#>
-[version] $Version = (Import-PowerShellDataFile "$PSScriptRoot/../Akismet.psd1").ModuleVersion
 
 <#
 .SYNOPSIS
@@ -53,7 +48,8 @@ class Client {
 	.SYNOPSIS
 		The user agent string to use when making requests.
 	#>
-	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$($Script:Version.ToString(3))"
+	[ValidateNotNullOrWhiteSpace()]
+	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-Version)"
 
 	<#
 	.SYNOPSIS
