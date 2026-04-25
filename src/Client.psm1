@@ -62,7 +62,7 @@ class Client {
 	#>
 	Client([string] $ApiKey, [Blog] $Blog) {
 		$this.ApiKey = $ApiKey
-		$this.BaseUrl = [uri] "https://rest.akismet.com/"
+		$this.BaseUrl = "https://rest.akismet.com/"
 		$this.Blog = $Blog
 	}
 
