@@ -1,5 +1,5 @@
-using namespace Belin.Akismet
 using namespace System.Net.Http
+using module ../Comment.psm1
 
 <#
 .SYNOPSIS

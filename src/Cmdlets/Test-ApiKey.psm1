@@ -1,4 +1,3 @@
-using namespace Belin.Akismet
 using namespace System.Net.Http
 
 <#

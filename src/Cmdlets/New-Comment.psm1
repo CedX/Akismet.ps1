@@ -1,4 +1,4 @@
-using namespace Belin.Akismet
+using module ../Comment.psm1
 
 <#
 .SYNOPSIS
@@ -8,7 +8,7 @@ using namespace Belin.Akismet
 #>
 function New-Comment {
 	[CmdletBinding()]
-	[OutputType([Belin.Akismet.Comment])]
+	[OutputType([Comment])]
 	param (
 		# The comment's author.
 		[Parameter(Mandatory)]

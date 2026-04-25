@@ -1,5 +1,5 @@
-using namespace Belin.Akismet
 using namespace System.Text
+using module ../Blog.psm1
 
 <#
 .SYNOPSIS
@@ -9,7 +9,7 @@ using namespace System.Text
 #>
 function New-Blog {
 	[CmdletBinding()]
-	[OutputType([Belin.Akismet.Blog])]
+	[OutputType([Blog])]
 	param (
 		# The blog or site URL.
 		[Parameter(Mandatory, Position = 0)]

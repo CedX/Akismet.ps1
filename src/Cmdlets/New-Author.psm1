@@ -1,4 +1,4 @@
-using namespace Belin.Akismet
+using module ../Author.psm1
 
 <#
 .SYNOPSIS
@@ -8,7 +8,7 @@ using namespace Belin.Akismet
 #>
 function New-Author {
 	[CmdletBinding()]
-	[OutputType([Belin.Akismet.Author])]
+	[OutputType([Author])]
 	param (
 		# The author's IP address.
 		[Parameter(Mandatory)]

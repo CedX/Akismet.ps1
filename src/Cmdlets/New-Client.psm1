@@ -1,5 +1,5 @@
-using namespace Belin.Akismet
 using namespace System.Diagnostics.CodeAnalysis
+using module ../Client.psm1
 
 <#
 .SYNOPSIS
@@ -9,7 +9,7 @@ using namespace System.Diagnostics.CodeAnalysis
 #>
 function New-Client {
 	[CmdletBinding()]
-	[OutputType([Belin.Akismet.Client])]
+	[OutputType([Client])]
 	[SuppressMessage("PSUseSupportsShouldProcess", "")]
 	param (
 		# The Akismet API key.

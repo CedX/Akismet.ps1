@@ -1,5 +1,5 @@
-using namespace Belin.Akismet
 using namespace System.Net.Http
+using module ../Comment.psm1
 
 <#
 .SYNOPSIS
@@ -11,7 +11,7 @@ using namespace System.Net.Http
 #>
 function Test-Comment {
 	[CmdletBinding()]
-	[OutputType([Belin.Akismet.CheckResult])]
+	[OutputType([CheckResult])]
 	param (
 		# The comment to be submitted.
 		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
