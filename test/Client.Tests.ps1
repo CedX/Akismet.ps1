@@ -38,23 +38,36 @@ Describe "Client" {
 	}
 
 	Context "CheckComment" {
-		$client.CheckComment($ham) | Should -Be [CheckResult]::Ham
-		$client.CheckComment($spam) | Should -BeIn [CheckResult]::Spam, [CheckResult]::PervasiveSpam
+		It "should return `[CheckResult]::Ham` for valid comment (e.g. ham)" {
+			$client.CheckComment($ham) | Should -Be ([CheckResult]::Ham)
+		}
+
+		It "should return `[CheckResult]::Spam` for invalid comment (e.g. spam)" {
+			$client.CheckComment($spam) | Should -BeIn ([CheckResult]::Spam, [CheckResult]::PervasiveSpam)
+		}
 	}
 
 	Context "SubmitHam" {
-		{ $client.SubmitHam($ham) } | Should -Not -Throw
+		It "should complete without any error" {
+			{ $client.SubmitHam($ham) } | Should -Not -Throw
+		}
 	}
 
 	Context "SubmitSpam" {
-		{ $client.SubmitSpam($spam) } | Should -Not -Throw
+		It "should complete without any error" {
+			{ $client.SubmitSpam($spam) } | Should -Not -Throw
+		}
 	}
 
 	Context "VerifyKey" {
-		$client.VerifyKey() | Should -BeTrue
+		It "should return `$true for a valid API key" {
+			$client.VerifyKey() | Should -BeTrue
+		}
 
-		$newClient = [Client]::new("0123456789-ABCDEF", $client.Blog)
-		$newClient.IsTest = $true
-		$newClient.VerifyKey() | Should -BeFalse
+		It "should return `$false for an invalid API key" {
+			$newClient = [Client]::new("0123456789AB", $client.Blog)
+			$newClient.IsTest = $true
+			$newClient.VerifyKey() | Should -BeFalse
+		}
 	}
 }

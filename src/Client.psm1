@@ -1,4 +1,5 @@
 using namespace Microsoft.PowerShell.Commands
+using namespace System.Collections.Generic
 using namespace System.Net.Http
 using module ./Blog.psm1
 using module ./CheckResult.psm1
@@ -93,9 +94,9 @@ class Client {
 		$response = $this.Fetch("1.1/comment-check", [hashtable] $Comment)
 		if ($response.Content -eq "false") { return [CheckResult]::Ham }
 
-		$proTips = @() # TODO TryGetValues does not exists!
-		if (-not $response.Headers.TryGetValues("X-akismet-pro-tip", ([ref] $proTips))) { return [CheckResult]::Spam }
-		return $proTips.First() -eq "discard" ? [CheckResult]::PervasiveSpam : [CheckResult]::Spam
+		$messages = [List[string]]::new()
+		if (-not $response.Headers.TryGetValue("X-akismet-pro-tip", [ref] $messages)) { return [CheckResult]::Spam }
+		return $messages[0] -eq "discard" ? [CheckResult]::PervasiveSpam : [CheckResult]::Spam
 	}
 
 	<#
@@ -146,10 +147,10 @@ class Client {
 		if ($this.IsTest) { $body.is_test = "1" }
 		if ($Fields.Count) { foreach ($key in $Fields.Keys) { $body.$key = $Fields.$key } }
 
-		$errors = @()
-		$response = Invoke-WebRequest [uri]::new($this.BaseUrl, $EndPoint) -Method Post -Body $body -UserAgent $this.UserAgent
-		if ($response.Headers.TryGetValues("X-akismet-alert-msg", ([ref] $errors))) { throw [HttpRequestException] $errors.First() }
-		if ($response.Headers.TryGetValues("X-akismet-debug-help", ([ref] $errors))) { throw [HttpRequestException] $errors.First() }
+		$messages = [List[string]]::new()
+		$response = Invoke-WebRequest ([uri]::new($this.BaseUrl, $EndPoint)) -Method Post -Body $body -UserAgent $this.UserAgent
+		if ($response.Headers.TryGetValue("X-akismet-alert-msg", [ref] $messages)) { throw [HttpRequestException] $messages[0] }
+		if ($response.Headers.TryGetValue("X-akismet-debug-help", [ref] $messages)) { throw [HttpRequestException] $messages[0] }
 		return $response
 	}
 }
