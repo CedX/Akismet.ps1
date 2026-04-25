@@ -3,7 +3,10 @@ Import-Module "$PSScriptRoot/../../Akismet.psd1"
 
 # The client used to query the remote API.
 [SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
-$client = New-AkismetClient -ApiKey $Env:AKISMET_API_KEY -Blog "https://github.com/cedx/akismet.ps1" -WhatIf
+$client = New-AkismetClient `
+	-ApiKey $Env:AKISMET_API_KEY `
+	-Blog "https://github.com/cedx/akismet.ps1" `
+	-WhatIf
 
 # A comment with content marked as ham.
 $author = New-AkismetAuthor `

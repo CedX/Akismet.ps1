@@ -5,13 +5,13 @@ POST {{baseUrl}}/comment-check
 Content-Type: application/x-www-form-urlencoded
 
 api_key={{$processEnv AKISMET_API_KEY}}
-&blog=https://github.com/cedx/akismet.net
+&blog=https://github.com/cedx/akismet.ps1
 &comment_author=Akismet
 &comment_author_url=https://cedric-belin.fr
 &comment_content=I'm testing out the Service API.
 &comment_type=comment
 &is_test=true
-&referrer=https://www.nuget.org/packages/Belin.Akismet
+&referrer=https://www.powershellgallery.com/packages/Belin.Akismet
 &user_agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 &user_ip=192.168.0.1
 &user_role=administrator
@@ -21,7 +21,7 @@ POST {{baseUrl}}/comment-check
 Content-Type: application/x-www-form-urlencoded
 
 api_key={{$processEnv AKISMET_API_KEY}}
-&blog=https://github.com/cedx/akismet.net
+&blog=https://github.com/cedx/akismet.ps1
 &comment_author=viagra-test-123
 &comment_content=Spam!
 &comment_type=trackback
