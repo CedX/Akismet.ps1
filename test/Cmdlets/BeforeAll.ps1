@@ -6,6 +6,7 @@ Import-Module "$PSScriptRoot/../../Akismet.psd1"
 $client = New-AkismetClient -ApiKey $Env:AKISMET_API_KEY -Blog "https://github.com/cedx/akismet.ps1" -WhatIf
 
 # A comment with content marked as ham.
+[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
 $ham = New-AkismetComment @{
 	Author = New-AkismetAuthor @{
 		IPAddress = "192.168.0.1"
@@ -20,6 +21,7 @@ $ham = New-AkismetComment @{
 }
 
 # A comment with content marked as spam.
+[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
 $spam = New-AkismetComment @{
 	Author = New-AkismetAuthor @{
 		Email = "akismet-guaranteed-spam@example.com"
