@@ -4,6 +4,7 @@ using namespace System.Text
 .SYNOPSIS
 	Represents the front page or home URL transmitted when making requests.
 #>
+[NoRunspaceAffinity()]
 class Blog {
 
 	<#

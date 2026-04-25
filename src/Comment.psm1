@@ -4,6 +4,7 @@ using module ./Author.psm1
 .SYNOPSIS
 	Represents a comment submitted by an author.
 #>
+[NoRunspaceAffinity()]
 class Comment {
 
 	<#

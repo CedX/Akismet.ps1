@@ -2,6 +2,7 @@
 .SYNOPSIS
 	Represents the author of a comment.
 #>
+[NoRunspaceAffinity()]
 class Author {
 
 	<#
