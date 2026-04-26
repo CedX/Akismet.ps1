@@ -1,5 +1,5 @@
 # Testing
-When you will integrate this library with your own application, you will of course need to test it.
+When you will integrate this module with your own application, you will of course need to test it.
 Often we see developers get ahead of themselves, making a few trivial API calls with minimal values
 and drawing the wrong conclusions about Akismet's accuracy.
 

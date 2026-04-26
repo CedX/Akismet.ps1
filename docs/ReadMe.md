@@ -23,4 +23,4 @@ There are three different types of calls to [Akismet](https://akismet.com):
 2. [Comment check](CommentCheck.md) is used to ask Akismet whether a given post, comment, profile, etc. is spam.
 3. [Submit spam](SubmitSpam.md) and [submit ham](SubmitHam.md) are follow-ups to let Akismet know when it got something wrong (missed spam and false positives). These are very important, and you shouldn't develop using the Akismet API without a facility to include reporting missed spam and false positives.
 
-Before integrating this library into your application, you should [test your API calls](Testing.md) to ensure a proper usage.
+Before integrating this module into your application, you should [test your API calls](Testing.md) to ensure a proper usage.
