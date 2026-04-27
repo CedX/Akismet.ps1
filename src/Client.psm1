@@ -10,7 +10,7 @@ using module ./Comment.psm1
 .SYNOPSIS
 	The response returned by the `submit-ham` and `submit-spam` endpoints when the outcome is a success.
 #>
-[string] $Success = "Thanks for making the web a better place."
+$Success = "Thanks for making the web a better place."
 
 <#
 .SYNOPSIS
