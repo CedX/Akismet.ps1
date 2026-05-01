@@ -8,15 +8,15 @@ using module ./Comment.psm1
 
 <#
 .SYNOPSIS
-	The response returned by the `submit-ham` and `submit-spam` endpoints when the outcome is a success.
-#>
-$Success = "Thanks for making the web a better place."
-
-<#
-.SYNOPSIS
 	Submits comments to the Akismet service.
 #>
 class Client {
+
+	<#
+	.SYNOPSIS
+		The response returned by the `submit-ham` and `submit-spam` endpoints when the outcome is a success.
+	#>
+	hidden static [string] $Success = "Thanks for making the web a better place."
 
 	<#
 	.SYNOPSIS
@@ -107,7 +107,7 @@ class Client {
 	#>
 	[void] SubmitHam([Comment] $Comment) {
 		$response = $this.Fetch("1.1/submit-ham", [hashtable] $Comment)
-		if ($response.Content -ne $Script:Success) { throw [HttpRequestException] "Invalid server response." }
+		if ($response.Content -ne [Client]::Success) { throw [HttpRequestException] "Invalid server response." }
 	}
 
 	<#
@@ -118,7 +118,7 @@ class Client {
 	#>
 	[void] SubmitSpam([Comment] $Comment) {
 		$response = $this.Fetch("1.1/submit-spam", [hashtable] $Comment)
-		if ($response.Content -ne $Script:Success) { throw [HttpRequestException] "Invalid server response." }
+		if ($response.Content -ne [Client]::Success) { throw [HttpRequestException] "Invalid server response." }
 	}
 
 	<#
