@@ -1,6 +1,7 @@
 @{
-	ModuleVersion = "1.0.0"
+	ModuleVersion = "1.1.0"
 	PowerShellVersion = "7.6"
+	RootModule = "src/Main.psm1"
 
 	Author = "Cédric Belin <cedx@outlook.com>"
 	CompanyName = "Cedric-Belin.fr"
@@ -21,17 +22,6 @@
 		"Submit-AkismetSpam"
 		"Test-AkismetApiKey"
 		"Test-AkismetComment"
-	)
-
-	NestedModules = @(
-		"src/Cmdlets/New-Author.psm1"
-		"src/Cmdlets/New-Blog.psm1"
-		"src/Cmdlets/New-Client.psm1"
-		"src/Cmdlets/New-Comment.psm1"
-		"src/Cmdlets/Submit-Ham.psm1"
-		"src/Cmdlets/Submit-Spam.psm1"
-		"src/Cmdlets/Test-ApiKey.psm1"
-		"src/Cmdlets/Test-Comment.psm1"
 	)
 
 	PrivateData = @{
