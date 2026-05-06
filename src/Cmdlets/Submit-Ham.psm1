@@ -8,7 +8,7 @@ using module ../Comment.psm1
 .INPUTS
 	The comment to be submitted.
 #>
-function Submit-Ham {
+function Submit-AkismetHam {
 	[CmdletBinding()]
 	[OutputType([void])]
 	param (

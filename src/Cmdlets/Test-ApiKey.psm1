@@ -10,7 +10,7 @@ using module ../Client.psm1
 .OUTPUTS
 	`$true` if the specified API key is valid, otherwise `$false`.
 #>
-function Test-ApiKey {
+function Test-AkismetApiKey {
 	[CmdletBinding()]
 	[OutputType([bool])]
 	param (

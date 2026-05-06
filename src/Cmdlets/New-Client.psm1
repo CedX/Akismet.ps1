@@ -9,7 +9,7 @@ using module ./Get-Version.psm1
 .OUTPUTS
 	The newly created client.
 #>
-function New-Client {
+function New-AkismetClient {
 	[CmdletBinding()]
 	[OutputType([Client])]
 	[SuppressMessage("PSUseSupportsShouldProcess", "")]
@@ -24,7 +24,7 @@ function New-Client {
 
 		# The user agent string to use when making requests.
 		[ValidateNotNullOrWhiteSpace()]
-		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-Version)",
+		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-AkismetVersion)",
 
 		# The base URL of the remote API endpoint.
 		[ValidateNotNull()]

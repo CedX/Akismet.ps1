@@ -7,7 +7,7 @@ using module ../Blog.psm1
 .OUTPUTS
 	The newly created blog.
 #>
-function New-Blog {
+function New-AkismetBlog {
 	[CmdletBinding()]
 	[OutputType([Blog])]
 	param (

@@ -11,7 +11,7 @@ using module ../Comment.psm1
 .OUTPUTS
 	A value indicating whether the specified comment is spam.
 #>
-function Test-Comment {
+function Test-AkismetComment {
 	[CmdletBinding()]
 	[OutputType([CheckResult])]
 	param (

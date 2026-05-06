@@ -7,7 +7,7 @@ using module ../Comment.psm1
 .OUTPUTS
 	The newly created comment.
 #>
-function New-Comment {
+function New-AkismetComment {
 	[CmdletBinding()]
 	[OutputType([Comment])]
 	param (

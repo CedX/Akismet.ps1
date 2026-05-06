@@ -1,5 +1,4 @@
 @{
-	DefaultCommandPrefix = "Akismet"
 	ModuleVersion = "1.0.0"
 	PowerShellVersion = "7.6"
 
@@ -14,15 +13,15 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-		"Get-Version"
-		"New-Author"
-		"New-Blog"
-		"New-Client"
-		"New-Comment"
-		"Submit-Ham"
-		"Submit-Spam"
-		"Test-ApiKey"
-		"Test-Comment"
+		"Get-AkismetVersion"
+		"New-AkismetAuthor"
+		"New-AkismetBlog"
+		"New-AkismetClient"
+		"New-AkismetComment"
+		"Submit-AkismetHam"
+		"Submit-AkismetSpam"
+		"Test-AkismetApiKey"
+		"Test-AkismetComment"
 	)
 
 	NestedModules = @(

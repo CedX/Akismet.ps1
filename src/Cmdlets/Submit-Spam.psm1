@@ -8,7 +8,7 @@ using module ../Comment.psm1
 .INPUTS
 	The comment to be submitted.
 #>
-function Submit-Spam {
+function Submit-AkismetSpam {
 	[CmdletBinding()]
 	[OutputType([void])]
 	param (

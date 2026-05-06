@@ -6,7 +6,7 @@ using module ../Author.psm1
 .OUTPUTS
 	The newly created author.
 #>
-function New-Author {
+function New-AkismetAuthor {
 	[CmdletBinding()]
 	[OutputType([Author])]
 	param (

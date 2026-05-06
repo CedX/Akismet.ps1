@@ -50,7 +50,7 @@ class Client {
 		The user agent string to use when making requests.
 	#>
 	[ValidateNotNullOrWhiteSpace()]
-	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-Version)"
+	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-AkismetVersion)"
 
 	<#
 	.SYNOPSIS
