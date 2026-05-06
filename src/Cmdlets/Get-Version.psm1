@@ -10,11 +10,13 @@
 .OUTPUTS
 	The module version.
 #>
-function Get-Version {
+function Get-AkismetVersion {
 	[CmdletBinding()]
 	[OutputType([semver])]
 	param ()
 
 	if ($Script:Version) { return $Script:Version }
-	($Script:Version = (Import-PowerShellDataFile "$PSScriptRoot/../../Akismet.psd1").ModuleVersion)
+	$path = "$PSScriptRoot/../../Belin.Akismet.psd1"
+	$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../../Akismet.psd1")
+	($Script:Version = [semver] $module.ModuleVersion)
 }
