@@ -13,7 +13,6 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-		"Get-AkismetVersion"
 		"New-AkismetAuthor"
 		"New-AkismetBlog"
 		"New-AkismetClient"
@@ -25,7 +24,6 @@
 	)
 
 	NestedModules = @(
-		"src/Cmdlets/Get-Version.psm1"
 		"src/Cmdlets/New-Author.psm1"
 		"src/Cmdlets/New-Blog.psm1"
 		"src/Cmdlets/New-Client.psm1"

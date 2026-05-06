@@ -3,7 +3,6 @@ using namespace System.Collections.Generic
 using namespace System.Net.Http
 using module ./Blog.psm1
 using module ./CheckResult.psm1
-using module ./Cmdlets/Get-Version.psm1
 using module ./Comment.psm1
 
 <#
@@ -17,6 +16,12 @@ class Client {
 		The response returned by the `submit-ham` and `submit-spam` endpoints when the outcome is a success.
 	#>
 	hidden static [string] $Success = "Thanks for making the web a better place."
+
+	<#
+	.SYNOPSIS
+		The module version.
+	#>
+	hidden static [semver] $Version
 
 	<#
 	.SYNOPSIS
@@ -50,7 +55,7 @@ class Client {
 		The user agent string to use when making requests.
 	#>
 	[ValidateNotNullOrWhiteSpace()]
-	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$(Get-AkismetVersion)"
+	[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$([Client]::Version)"
 
 	<#
 	.SYNOPSIS
@@ -80,6 +85,16 @@ class Client {
 		$this.ApiKey = $ApiKey
 		$this.BaseUrl = $BaseUrl
 		$this.Blog = $Blog
+	}
+
+	<#
+	.SYNOPSIS
+		Initializes the class.
+	#>
+	static Client() {
+		$path = "$PSScriptRoot/../Belin.Akismet.psd1"
+		$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../Akismet.psd1")
+		[Client]::Version = $module.ModuleVersion
 	}
 
 	<#
