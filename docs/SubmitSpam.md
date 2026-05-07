@@ -36,7 +36,7 @@ See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) 
 
 ## Example
 ```pwsh
-Import-Module Belin.Akismet
+using module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress "127.0.0.1" -UserAgent "Spam Bot/6.6.6"
 $comment = New-AkismetComment "Spam!" -Author $author

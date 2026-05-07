@@ -11,7 +11,7 @@ The Akismet API will always return a `[CheckResult]::Spam` response to a valid r
 If you receive anything else, something is wrong in your client, data, or communications.
 
 ```pwsh
-Import-Module Belin.Akismet
+using module Belin.Akismet
 
 $author = @{
   IPAddress = "127.0.0.1"
@@ -36,7 +36,7 @@ and all other required fields populated with typical values.
 The Akismet API will always return a `[CheckResult]::Ham` response. Any other response indicates a data or communication problem.
 
 ```pwsh
-Import-Module Belin.Akismet
+using module Belin.Akismet
 
 $author = @{
   IPAddress = "192.168.0.1"
@@ -61,7 +61,7 @@ That will tell Akismet not to change its behaviour based on those API calls: the
 That means your tests will be somewhat repeatable, in the sense that one test won't influence subsequent calls.
 
 ```pwsh
-Import-Module Belin.Akismet
+using module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress: "127.0.0.1" -UserAgent "Mozilla/5.0"
 $comment = New-AkismetComment "A user comment." -Author $author

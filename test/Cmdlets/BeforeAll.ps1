@@ -1,5 +1,5 @@
 using namespace System.Diagnostics.CodeAnalysis
-Import-Module "$PSScriptRoot/../../Akismet.psd1"
+using module ../../Akismet.psd1
 
 # The client used to query the remote API.
 [SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
