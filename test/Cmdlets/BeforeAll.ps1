@@ -5,7 +5,7 @@ using module ../../Akismet.psd1
 [SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
 $client = New-AkismetClient `
 	-ApiKey $Env:AKISMET_API_KEY `
-	-Blog "https://github.com/cedx/akismet.ps1" `
+	-Blog "https://github.com/CedX/Akismet.ps1" `
 	-WhatIf
 
 # A comment with content marked as ham.

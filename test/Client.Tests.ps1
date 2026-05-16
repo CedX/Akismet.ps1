@@ -10,7 +10,7 @@ using module ../src/Comment.psm1
 Describe "Client" {
 	BeforeAll {
 		# The client used to query the remote API.
-		$client = [Client]::new($Env:AKISMET_API_KEY, "https://github.com/cedx/akismet.ps1")
+		$client = [Client]::new($Env:AKISMET_API_KEY, "https://github.com/CedX/Akismet.ps1")
 		$client.IsTest = $true
 
 		# A comment with content marked as ham.

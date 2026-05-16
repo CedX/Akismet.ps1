@@ -38,5 +38,5 @@ $isValid = Test-AkismetApiKey "123YourAPIKey" -Blog "https://www.yourblog.com"
 Write-Output ($isValid ? "The API key is valid." : "The API key is invalid.")
 ```
 
-See the [source code](https://github.com/cedx/akismet.ps1/tree/main/src/Cmdlets) for detailed information
+See the [source code](https://github.com/CedX/Akismet.ps1/tree/main/src/Cmdlets) for detailed information
 about the `New-AkismetClient` and `New-AkismetBlog` classes, and their parameters.

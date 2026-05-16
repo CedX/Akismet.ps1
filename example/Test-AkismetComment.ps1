@@ -16,7 +16,7 @@ $comment = @{
 	Author = New-AkismetAuthor @author
 	Date = Get-Date
 	Content = "A user comment."
-	Referrer = "https://github.com/cedx/akismet.ps1"
+	Referrer = "https://github.com/CedX/Akismet.ps1"
 	Type = "contact-form"
 }
 

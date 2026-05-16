@@ -26,9 +26,9 @@
 
 	PrivateData = @{
 		PSData = @{
-			LicenseUri = "https://github.com/cedx/akismet.ps1/blob/main/License.md"
-			ProjectUri = "https://github.com/cedx/akismet.ps1"
-			ReleaseNotes = "https://github.com/cedx/akismet.ps1/releases"
+			LicenseUri = "https://github.com/CedX/Akismet.ps1/blob/main/License.md"
+			ProjectUri = "https://github.com/CedX/Akismet.ps1"
+			ReleaseNotes = "https://github.com/CedX/Akismet.ps1/releases"
 			Tags = "akismet", "api", "client", "comment", "spam", "validation"
 		}
 	}

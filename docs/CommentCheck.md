@@ -50,7 +50,7 @@ $comment = @{
   Author = New-AkismetAuthor @author
   Date = Get-Date
   Content = "A user comment."
-  Referrer = "https://github.com/cedx/akismet.ps1"
+  Referrer = "https://github.com/CedX/Akismet.ps1"
   Type = "contact-form"
 }
 
@@ -65,5 +65,5 @@ $result = Test-AkismetComment -Client $client -Comment (New-AkismetComment @comm
 Write-Output ($result -eq "Ham" ? "The comment is ham." : "The comment is spam.")
 ```
 
-See the [source code](https://github.com/cedx/akismet.ps1/tree/main/src/Cmdlets) for detailed information
+See the [source code](https://github.com/CedX/Akismet.ps1/tree/main/src/Cmdlets) for detailed information
 about the `New-AkismetAuthor`, `New-AkismetBlog` and `New-AkismetComment` cmdlets, and their parameters.
