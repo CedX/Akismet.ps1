@@ -1,7 +1,7 @@
-using module ../src/Author.psm1
-using module ../src/CheckResult.psm1
-using module ../src/Client.psm1
-using module ../src/Comment.psm1
+using module ../Sources/Author.psm1
+using module ../Sources/CheckResult.psm1
+using module ../Sources/Client.psm1
+using module ../Sources/Comment.psm1
 
 <#
 .SYNOPSIS

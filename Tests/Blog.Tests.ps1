@@ -1,5 +1,5 @@
 using namespace System.Text
-using module ../src/Blog.psm1
+using module ../Sources/Blog.psm1
 
 <#
 .SYNOPSIS

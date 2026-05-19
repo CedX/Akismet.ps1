@@ -3,8 +3,8 @@ Prevent comment spam using [Akismet](https://akismet.com) service,
 in [PowerShell](https://learn.microsoft.com/en-us/powershell).
 
 ## Documentation
-- [User guide](https://github.com/CedX/Akismet.ps1/tree/main/docs)
-- [Examples](https://github.com/CedX/Akismet.ps1/tree/main/example)
+- [User guide](https://github.com/CedX/Akismet.ps1/tree/main/Documentation)
+- [Examples](https://github.com/CedX/Akismet.ps1/tree/main/Examples)
 
 ## Development
 - [Git repository](https://github.com/CedX/Akismet.ps1)

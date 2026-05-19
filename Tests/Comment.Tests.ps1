@@ -1,6 +1,6 @@
 ﻿using namespace System.Globalization
-using module ../src/Author.psm1
-using module ../src/Comment.psm1
+using module ../Sources/Author.psm1
+using module ../Sources/Comment.psm1
 
 <#
 .SYNOPSIS

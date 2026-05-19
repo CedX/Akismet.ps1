@@ -1,4 +1,4 @@
-﻿using module ../src/Author.psm1
+﻿using module ../Sources/Author.psm1
 
 <#
 .SYNOPSIS
