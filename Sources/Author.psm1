@@ -79,6 +79,7 @@ class Author {
 .SYNOPSIS
 	Specifies the role of an author.
 #>
+[NoRunspaceAffinity()]
 class AuthorRole {
 
 	<#

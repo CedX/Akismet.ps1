@@ -102,6 +102,7 @@ class Comment {
 .SYNOPSIS
 	Specifies the type of a comment.
 #>
+[NoRunspaceAffinity()]
 class CommentType {
 
 	<#
