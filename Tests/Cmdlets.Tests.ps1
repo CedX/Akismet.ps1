@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-	Tests the features of the `Submit-Ham` cmdlet.
+	Tests the features of the `Submit-AkismetHam` cmdlet.
 #>
-Describe "Submit-Ham" {
+Describe "Submit-AkismetHam" {
 	BeforeAll { . "$PSScriptRoot/BeforeAll.ps1" }
 
 	It "should complete without any error" {
@@ -12,9 +12,9 @@ Describe "Submit-Ham" {
 
 <#
 .SYNOPSIS
-	Tests the features of the `Submit-Spam` cmdlet.
+	Tests the features of the `Submit-AkismetSpam` cmdlet.
 #>
-Describe "Submit-Spam" {
+Describe "Submit-AkismetSpam" {
 	BeforeAll { . "$PSScriptRoot/BeforeAll.ps1" }
 
 	It "should complete without any error" {
@@ -24,9 +24,9 @@ Describe "Submit-Spam" {
 
 <#
 .SYNOPSIS
-	Tests the features of the `Test-ApiKey` cmdlet.
+	Tests the features of the `Test-AkismetApiKey` cmdlet.
 #>
-Describe "Test-ApiKey" {
+Describe "Test-AkismetApiKey" {
 	BeforeAll { . "$PSScriptRoot/BeforeAll.ps1" }
 
 	It "should return `$true for a valid API key" {
@@ -40,9 +40,9 @@ Describe "Test-ApiKey" {
 
 <#
 .SYNOPSIS
-	Tests the features of the `Test-Comment` cmdlet.
+	Tests the features of the `Test-AkismetComment` cmdlet.
 #>
-Describe "Test-Comment" {
+Describe "Test-AkismetComment" {
 	BeforeAll { . "$PSScriptRoot/BeforeAll.ps1" }
 
 	It "should return [CheckResult]::Ham for valid comment (e.g. ham)" {
