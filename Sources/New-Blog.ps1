@@ -7,7 +7,7 @@ using namespace System.Text
 .OUTPUTS
 	The newly created blog.
 #>
-function New-AkismetBlog {
+function New-Blog {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.Blog])]
 	param (

@@ -6,7 +6,7 @@ using namespace Belin.Akismet
 .OUTPUTS
 	The newly created author.
 #>
-function New-AkismetAuthor {
+function New-Author {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.Author])]
 	param (

@@ -9,7 +9,7 @@ using namespace System.Net.Http
 .OUTPUTS
 	A value indicating whether the specified comment is spam.
 #>
-function Test-AkismetComment {
+function Test-Comment {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.CheckResult])]
 	param (
