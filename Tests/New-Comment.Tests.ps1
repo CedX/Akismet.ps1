@@ -1,29 +1,31 @@
-﻿using namespace System.Globalization
-using module ../Sources/Author.psm1
-using module ../Sources/Comment.psm1
+﻿using namespace Belin.Akismet
+using namespace System.Globalization
+using module ../Akismet.psd1
 
 <#
 .SYNOPSIS
-	Tests the features of the `Comment` class.
+	Tests the features of the `New-Comment` cmdlet.
 #>
-Describe "Comment" {
+Describe "New-Comment" {
 	Context "ToHashtable" {
 		It "should return only the author info with a newly created instance" {
-			$hashtable = [hashtable] [Comment]::new([Author]::new("127.0.0.1"))
+			$hashtable = [hashtable] (New-AkismetComment -Author (New-AkismetAuthor -IPAddress "127.0.0.1"))
 			$hashtable.Keys | Should -HaveCount 1
 			$hashtable.user_ip | Should -Be "127.0.0.1"
 		}
 
 		It "should return a non-empty hash table with an initialized instance" {
-			$author = [Author]::new("192.168.0.1")
-			$author.Name = "Cédric Belin"
-			$author.UserAgent = "Doom/6.6.6"
+			$author = New-AkismetAuthor `
+				-IPAddress "192.168.0.1" `
+				-Name "Cédric Belin" `
+				-UserAgent "Doom/6.6.6"
 
-			$comment = [Comment] $author
-			$comment.Content = "A user comment."
-			$comment.Date = [datetime]::Parse("2000-01-01T00:00:00Z", [cultureinfo]::InvariantCulture, [DateTimeStyles]::RoundtripKind)
-			$comment.Referrer = "https://cedric-belin.fr"
-			$comment.Type = [CommentType]::BlogPost
+			$comment = New-AkismetComment `
+				-Author $author `
+				-Content "A user comment." `
+				-Date ([datetime]::Parse("2000-01-01T00:00:00Z", [cultureinfo]::InvariantCulture, [DateTimeStyles]::RoundtripKind)) `
+				-Referrer "https://cedric-belin.fr" `
+				-Type ([CommentType]::BlogPost)
 
 			$hashtable = [hashtable] $comment
 			$hashtable.Keys | Should -HaveCount 7

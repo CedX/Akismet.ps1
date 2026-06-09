@@ -1,23 +1,24 @@
-﻿using module ../Sources/Author.psm1
+﻿using module ../Akismet.psd1
 
 <#
 .SYNOPSIS
-	Tests the features of the `Author` class.
+	Tests the features of the `New-Author` cmdlet.
 #>
-Describe "Author" {
+Describe "New-Author" {
 	Context "ToHashtable" {
 		It "should return only the IP address with a newly created instance" {
-			$hashtable = [hashtable] [Author]::new("127.0.0.1")
+			$hashtable = [hashtable] (New-AkismetAuthor -IPAddress "127.0.0.1")
 			$hashtable.Keys | Should -HaveCount 1
 			$hashtable.user_ip | Should -Be "127.0.0.1"
 		}
 
 		It "should return a non-empty hash table with an initialized instance" {
-			$author = [Author]::new("192.168.0.1")
-			$author.Name = "Cédric Belin"
-			$author.Email = "contact@cedric-belin.fr"
-			$author.Url = "https://cedric-belin.fr"
-			$author.UserAgent = "Mozilla/5.0"
+			$author = New-AkismetAuthor `
+				-IPAddress "192.168.0.1" `
+				-Name "Cédric Belin" `
+				-Email "contact@cedric-belin.fr" `
+				-Url "https://cedric-belin.fr" `
+				-UserAgent "Mozilla/5.0"
 
 			$hashtable = [hashtable] $author
 			$hashtable.Keys | Should -HaveCount 5

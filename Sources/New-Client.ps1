@@ -3,6 +3,16 @@ using namespace System.Diagnostics.CodeAnalysis
 
 <#
 .SYNOPSIS
+	The module version.
+#>
+[semver] $Script:Version = & {
+	$path = "$PSScriptRoot/../Belin.Akismet.psd1"
+	$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../Akismet.psd1")
+	$module.ModuleVersion
+}
+
+<#
+.SYNOPSIS
 	Creates a new Akismet client.
 .OUTPUTS
 	The newly created client.
@@ -22,7 +32,7 @@ function New-Client {
 
 		# The user agent string to use when making requests.
 		[ValidateNotNullOrWhiteSpace()]
-		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$([Client]::Version)",
+		[string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.Akismet/$Script:Version",
 
 		# The base URL of the remote API endpoint.
 		[ValidateNotNull()]
