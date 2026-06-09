@@ -44,7 +44,6 @@ function Publish-PSGalleryModule {
 	Copy-Item $root/Akismet.psd1 $output/Belin.Akismet.psd1
 	Copy-Item $root/*.md $output
 	Copy-Item $root/Sources/*.ps*1 $output/Sources
-	Copy-Item $module.RootModule $output/Binaries
 	$module.RequiredAssemblies.ForEach{ "$root/$_" } | Copy-Item -Destination $output/Binaries
 
 	$output = "$root/Temp/PSGallery"
