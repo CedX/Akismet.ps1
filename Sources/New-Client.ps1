@@ -7,8 +7,7 @@ using namespace System.Diagnostics.CodeAnalysis
 #>
 [semver] $Script:Version = & {
 	$path = "$PSScriptRoot/../Belin.Akismet.psd1"
-	$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../Akismet.psd1")
-	$module.ModuleVersion
+	(Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../Akismet.psd1")).ModuleVersion
 }
 
 <#
