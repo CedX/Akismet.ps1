@@ -7,7 +7,7 @@ using namespace System.Net.Http
 .INPUTS
 	The comment to be submitted.
 #>
-function Submit-AkismetSpam {
+function Submit-Spam {
 	[CmdletBinding()]
 	[OutputType([void])]
 	param (

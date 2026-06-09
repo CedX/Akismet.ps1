@@ -7,7 +7,7 @@ using namespace System.Net.Http
 .INPUTS
 	The comment to be submitted.
 #>
-function Submit-AkismetHam {
+function Submit-Ham {
 	[CmdletBinding()]
 	[OutputType([void])]
 	param (

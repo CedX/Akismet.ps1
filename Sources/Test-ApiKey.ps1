@@ -9,7 +9,7 @@ using namespace System.Net.Http
 .OUTPUTS
 	`$true` if the specified API key is valid, otherwise `$false`.
 #>
-function Test-AkismetApiKey {
+function Test-ApiKey {
 	[CmdletBinding()]
 	[OutputType([bool])]
 	param (

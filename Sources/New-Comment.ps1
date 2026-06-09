@@ -6,7 +6,7 @@ using namespace Belin.Akismet
 .OUTPUTS
 	The newly created comment.
 #>
-function New-AkismetComment {
+function New-Comment {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.Comment])]
 	param (

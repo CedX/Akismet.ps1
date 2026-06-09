@@ -7,7 +7,7 @@ using namespace System.Diagnostics.CodeAnalysis
 .OUTPUTS
 	The newly created client.
 #>
-function New-AkismetClient {
+function New-Client {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.Client])]
 	[SuppressMessage("PSUseSupportsShouldProcess", "")]
