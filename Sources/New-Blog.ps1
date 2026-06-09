@@ -18,7 +18,7 @@ function New-Blog {
 		# The character encoding for the values included in comments.
 		[ValidateScript({
 			$charset = $_
-			[string]::IsNullOrEmpty($charset) -or [Encoding].GetEncodings().Where({ $_.Name -eq $charset }, "First").Count
+			[string]::IsNullOrEmpty($charset) -or [Encoding]::GetEncodings().Where({ $_.Name -eq $charset }, "First").Count
 		}, ErrorMessage = "The specified character encoding is unknown.")]
 		[string] $Charset,
 
