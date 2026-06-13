@@ -19,7 +19,7 @@ using namespace System.Diagnostics.CodeAnalysis
 function New-Client {
 	[CmdletBinding()]
 	[OutputType([Belin.Akismet.Client])]
-	[SuppressMessage("PSUseSupportsShouldProcess")]
+	[SuppressMessage("PSUseSupportsShouldProcess", "")]
 	param (
 		# The Akismet API key.
 		[Parameter(Mandatory, Position = 0)]
