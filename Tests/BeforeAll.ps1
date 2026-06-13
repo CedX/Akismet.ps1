@@ -2,7 +2,7 @@ using namespace System.Diagnostics.CodeAnalysis
 using module ../Akismet.psd1
 
 # The client used to query the remote API.
-[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
+[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments")]
 $client = New-AkismetClient `
 	-ApiKey $Env:AKISMET_API_KEY `
 	-Blog "https://github.com/CedX/Akismet.ps1" `
@@ -16,7 +16,7 @@ $author = New-AkismetAuthor `
 	-Url "https://cedric-belin.fr" `
 	-UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
 
-[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
+[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments")]
 $ham = New-AkismetComment `
 	-Author $author `
 	-Content "I'm testing out the Service API." `
@@ -30,7 +30,7 @@ $author = New-AkismetAuthor `
 	-Name "viagra-test-123" `
 	-UserAgent "Spam Bot/6.6.6"
 
-[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments", "")]
+[SuppressMessage("PSUseDeclaredVarsMoreThanAssignments")]
 $spam = New-AkismetComment `
 	-Author $author `
 	-Content "Spam!" `
