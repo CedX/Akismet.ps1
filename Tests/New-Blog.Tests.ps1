@@ -8,8 +8,8 @@ Describe "New-Blog" {
 	Context "ToHashtable" {
 		It "should return only the blog URL with a newly created instance" {
 			$hashtable = [hashtable] (New-AkismetBlog "https://github.com/CedX/Akismet.ps1")
-			$hashtable.Keys | Should -HaveCount 1
-			$hashtable.blog | Should -BeExactly "https://github.com/CedX/Akismet.ps1"
+			Should-BeHashtable $hashtable -Count 1
+			Should-BeString "https://github.com/CedX/Akismet.ps1" $hashtable.blog -CaseSensitive
 		}
 
 		It "should return a non-empty hash table with an initialized instance" {
@@ -18,10 +18,10 @@ Describe "New-Blog" {
 				-Languages "en", "fr"
 
 			$hashtable = [hashtable] $blog
-			$hashtable.Keys | Should -HaveCount 3
-			$hashtable.blog | Should -BeExactly "https://github.com/CedX/Akismet.ps1"
-			$hashtable.blog_charset | Should -BeExactly "utf-8"
-			$hashtable.blog_lang | Should -BeExactly "en,fr"
+			Should-BeHashtable $hashtable -Count 3
+			Should-BeString "https://github.com/CedX/Akismet.ps1" $hashtable.blog -CaseSensitive
+			Should-BeString "utf-8" $hashtable.blog_charset -CaseSensitive
+			Should-BeString "en,fr" $hashtable.blog_lang -CaseSensitive
 		}
 	}
 }

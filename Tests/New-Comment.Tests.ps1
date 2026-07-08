@@ -10,8 +10,8 @@ Describe "New-Comment" {
 	Context "ToHashtable" {
 		It "should return only the author info with a newly created instance" {
 			$hashtable = [hashtable] (New-AkismetComment -Author (New-AkismetAuthor -IPAddress "127.0.0.1"))
-			$hashtable.Keys | Should -HaveCount 1
-			$hashtable.user_ip | Should -Be "127.0.0.1"
+			Should-BeHashtable $hashtable -Count 1
+			Should-BeString "127.0.0.1" $hashtable.user_ip
 		}
 
 		It "should return a non-empty hash table with an initialized instance" {
@@ -28,14 +28,14 @@ Describe "New-Comment" {
 				-Type ([CommentType]::BlogPost)
 
 			$hashtable = [hashtable] $comment
-			$hashtable.Keys | Should -HaveCount 7
-			$hashtable.comment_author | Should -BeExactly "Cédric Belin"
-			$hashtable.comment_content | Should -BeExactly "A user comment."
-			$hashtable.comment_date_gmt | Should -BeExactly "2000-01-01T00:00:00.0000000Z"
-			$hashtable.comment_type | Should -BeExactly "blog-post"
-			$hashtable.referrer | Should -BeExactly "https://cedric-belin.fr/"
-			$hashtable.user_agent | Should -BeExactly "Doom/6.6.6"
-			$hashtable.user_ip | Should -Be "192.168.0.1"
+			Should-BeHashtable $hashtable -Count 7
+			Should-BeString "Cédric Belin" $hashtable.comment_author -CaseSensitive
+			Should-BeString "A user comment." $hashtable.comment_content -CaseSensitive
+			Should-BeString "2000-01-01T00:00:00.0000000Z" $hashtable.comment_date_gmt -CaseSensitive
+			Should-BeString "blog-post" $hashtable.comment_type -CaseSensitive
+			Should-BeString "https://cedric-belin.fr/" $hashtable.referrer -CaseSensitive
+			Should-BeString "Doom/6.6.6" $hashtable.user_agent -CaseSensitive
+			Should-BeString "192.168.0.1" $hashtable.user_ip
 		}
 	}
 }
