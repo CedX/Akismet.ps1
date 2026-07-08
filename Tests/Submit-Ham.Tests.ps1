@@ -6,6 +6,6 @@ Describe "Submit-Ham" {
 	BeforeAll { . "$PSScriptRoot/BeforeAll.ps1" }
 
 	It "should complete without any error" {
-		{ $ham | Submit-AkismetHam -Client $client -ErrorAction Stop } | Should -Not -Throw
+		& { $ham | Submit-AkismetHam -Client $client -ErrorAction Stop } | Out-Null
 	}
 }
