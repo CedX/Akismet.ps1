@@ -15,7 +15,7 @@ function New-Author {
 		[ipaddress] $IPAddress,
 
 		# The author's name. If you set it to `"viagra-test-123"`, Akismet will always return `$true`.
-		[Parameter(Position = 0)]
+		[Parameter(Position = 1)]
 		[ValidateNotNull()]
 		[string] $Name = "",
 

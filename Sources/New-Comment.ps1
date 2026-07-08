@@ -15,7 +15,7 @@ function New-Comment {
 		[Author] $Author,
 
 		# The comment's content.
-		[Parameter(Position = 0)]
+		[Parameter(Position = 1)]
 		[ValidateNotNull()]
 		[string] $Content = "",
 

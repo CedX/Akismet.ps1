@@ -22,7 +22,7 @@ function New-Client {
 	[SuppressMessage("PSUseSupportsShouldProcess", "")]
 	param (
 		# The Akismet API key.
-		[Parameter(Mandatory, Position = 0)]
+		[Parameter(Mandatory, Position = 1)]
 		[string] $ApiKey,
 
 		# The front page or home URL of the instance making requests.

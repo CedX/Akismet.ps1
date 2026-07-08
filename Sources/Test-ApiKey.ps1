@@ -14,7 +14,7 @@ function Test-ApiKey {
 	[OutputType([bool])]
 	param (
 		# The Akismet API key.
-		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
+		[Parameter(Mandatory, Position = 1, ValueFromPipeline)]
 		[string] $ApiKey,
 
 		# The front page or home URL of the instance making requests.

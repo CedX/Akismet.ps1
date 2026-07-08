@@ -12,7 +12,7 @@ function New-Blog {
 	[OutputType([Belin.Akismet.Blog])]
 	param (
 		# The blog or site URL.
-		[Parameter(Mandatory, Position = 0)]
+		[Parameter(Mandatory, Position = 1)]
 		[uri] $Url,
 
 		# The character encoding for the values included in comments.

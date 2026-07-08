@@ -14,7 +14,7 @@ function Test-Comment {
 	[OutputType([Belin.Akismet.CheckResult])]
 	param (
 		# The comment to be submitted.
-		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
+		[Parameter(Mandatory, Position = 1, ValueFromPipeline)]
 		[Comment] $Comment,
 
 		# The Akismet client used to submit the comment.
