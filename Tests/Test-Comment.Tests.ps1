@@ -10,6 +10,7 @@ Describe "Test-Comment" {
 	}
 
 	It "should return [CheckResult]::Spam for invalid comment (e.g. spam)" {
-		"Spam", "PervasiveSpam" | Should-ContainCollection ($spam | Test-AkismetComment -Client $client)
+		$result = $spam | Test-AkismetComment -Client $client
+		Should-BeTrue (($result -eq "Spam") -or ($result -eq "PervasiveSpam"))
 	}
 }
