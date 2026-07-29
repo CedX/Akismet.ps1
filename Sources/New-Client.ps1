@@ -41,7 +41,8 @@ function New-Client {
 		[switch] $WhatIf
 	)
 
-	$client = [Client]::new($ApiKey, $Blog, $Uri)
+	$client = [Client]::new($ApiKey, $Blog)
+	$client.BaseUrl = $Uri
 	$client.IsTest = $WhatIf
 	$client.UserAgent = $UserAgent
 	$client
