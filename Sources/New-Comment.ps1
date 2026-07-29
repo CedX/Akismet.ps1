@@ -17,7 +17,7 @@ function New-Comment {
 		# The comment's content.
 		[Parameter(Position = 1)]
 		[ValidateNotNull()]
-		[string] $Content = "",
+		[string] $Content,
 
 		# The context in which this comment was posted.
 		[ValidateNotNull()]
@@ -34,14 +34,14 @@ function New-Comment {
 
 		# A string describing why the content is being rechecked.
 		[ValidateNotNull()]
-		[string] $RecheckReason = "",
+		[string] $RecheckReason,
 
 		# The URL of the webpage that linked to the entry being requested.
 		[uri] $Referrer,
 
 		# The comment's type.
 		[ValidateNotNull()]
-		[string] $Type = ""
+		[string] $Type
 	)
 
 	$comment = [Comment]::new($Author)
