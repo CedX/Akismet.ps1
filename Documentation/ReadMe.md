@@ -10,7 +10,7 @@ Add Akismet to your [PowerShell](https://learn.microsoft.com/en-us/powershell) s
 Install the latest version of **Akismet for PowerShell**
 with [PSResourceGet](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget) package manager:
 
-```shell
+```powershell
 Install-PSResource Belin.Akismet
 ```
 
