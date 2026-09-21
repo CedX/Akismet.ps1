@@ -9,7 +9,7 @@ so artificially generating spam comments is not a viable approach.
 
 See the [Akismet API documentation](https://akismet.com/developers/detailed-docs/comment-check) for more information.
 
-```pwsh
+```powershell
 Test-AkismetComment -Client $client -Comment $comment
 ```
 
@@ -35,7 +35,7 @@ It can also fault with a custom error message (provided by the `X-akismet-alert-
 See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) for more information.
 
 ## Example
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = @{

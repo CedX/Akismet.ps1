@@ -7,7 +7,7 @@ that any values you're passing here match up with the original and corresponding
 
 See the [Akismet API documentation](https://akismet.com/developers/detailed-docs/submit-ham-false-positives) for more information.
 
-```pwsh
+```powershell
 Submit-AkismetHam -Client $client -Comment $comment
 ```
 
@@ -33,7 +33,7 @@ It can also fault with a custom error message (provided by the `X-akismet-alert-
 See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) for more information.
 
 ## Example
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress "192.168.0.1" -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:144.0) Gecko/20100101 Firefox/144.0"

@@ -7,7 +7,7 @@ if you will have multiple users with their own Akismet subscriptions using your 
 
 See the [Akismet API documentation](https://akismet.com/developers/detailed-docs/key-verification) for more information.
 
-```pwsh
+```powershell
 Test-AkismetApiKey -ApiKey "123YourAPIKey" -Blog "https://www.yourblog.com"
 ```
 

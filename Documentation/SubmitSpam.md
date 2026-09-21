@@ -9,7 +9,7 @@ you should ensure that the values that you do send match those of the original c
 
 See the [Akismet API documentation](https://akismet.com/developers/detailed-docs/submit-spam-missed-spam) for more information.
 
-```pwsh
+```powershell
 Submit-AkismetSpam -Client $client -Comment $comment
 ```
 
@@ -35,7 +35,7 @@ It can also fault with a custom error message (provided by the `X-akismet-alert-
 See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) for more information.
 
 ## Example
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress "127.0.0.1" -UserAgent "Spam Bot/6.6.6"

@@ -10,7 +10,7 @@ or `[Author].Email` set to `"akismet-guaranteed-spam@example.com"`. Populate all
 The Akismet API will always return a `[CheckResult]::Spam` response to a valid request with one of those values.
 If you receive anything else, something is wrong in your client, data, or communications.
 
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = @{
@@ -35,7 +35,7 @@ and all other required fields populated with typical values.
 
 The Akismet API will always return a `[CheckResult]::Ham` response. Any other response indicates a data or communication problem.
 
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = @{
@@ -60,7 +60,7 @@ Enable the `[Client].WhatIf` option in your tests.
 That will tell Akismet not to change its behaviour based on those API calls: they will have no training effect.
 That means your tests will be somewhat repeatable, in the sense that one test won't influence subsequent calls.
 
-```pwsh
+```powershell
 using module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress: "127.0.0.1" -UserAgent "Mozilla/5.0"
