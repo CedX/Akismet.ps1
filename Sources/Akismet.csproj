@@ -20,6 +20,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Belin.Akismet" Version="5.*" />
+		<PackageReference Include="Belin.Akismet" Version="6.*" />
 	</ItemGroup>
 </Project>
