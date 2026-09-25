@@ -1,5 +1,10 @@
 # Changelog
 
+## Version [3.0.0](https://github.com/CedX/Akismet.ps1/compare/v2.0.1...v3.0.0)
+- Breaking change: the underlying `Client` class now implements the `IDisposable` interface.
+- Added the `Close-Client` cmdlet.
+- Updated the package dependencies.
+
 ## Version [2.0.1](https://github.com/CedX/Akismet.ps1/compare/v2.0.0...v2.0.1)
 - Optimized the packaging.
 
