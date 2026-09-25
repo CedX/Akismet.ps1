@@ -13,6 +13,26 @@ using namespace System.Net.Http
 
 <#
 .SYNOPSIS
+	Releases the resources associated with the specified client.
+.INPUTS
+	The Akismet client to dispose.
+#>
+function Close-Client {
+	[CmdletBinding()]
+	[OutputType([void])]
+	param (
+		# The Akismet client to dispose.
+		[Parameter(Mandatory, Position = 1, ValueFromPipeline)]
+		[Client] $InputObject
+	)
+
+	process {
+		$InputObject.Dispose()
+	}
+}
+
+<#
+.SYNOPSIS
 	Creates a new Akismet client.
 .OUTPUTS
 	The newly created client.

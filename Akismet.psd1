@@ -16,6 +16,7 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
+		"Close-Client"
 		"New-Author"
 		"New-Blog"
 		"New-Client"
