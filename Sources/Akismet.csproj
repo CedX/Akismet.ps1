@@ -20,6 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Belin.Akismet" Version="6.*" />
+		<InternalsVisibleTo Include="$(RootNamespace).Tests" />
+		<PackageReference Include="Belin.Akismet" Version="6.0.0" />
 	</ItemGroup>
 </Project>
