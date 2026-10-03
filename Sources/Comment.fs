@@ -46,17 +46,17 @@ type NewCommentCommand() =
   member val Type = "" with get, set
 
   /// Performs execution of this command.
-  override this.ProcessRecord () =
-    let comment = Comment (nonNull this.Author)
-    comment.Content <- this.Content
-    comment.Context <- this.Context
-    comment.Date <- this.Date
-    comment.Permalink <- this.Permalink
-    comment.PostModified <- this.PostModified
-    comment.RecheckReason <- this.RecheckReason
-    comment.Referrer <- this.Referrer
-    comment.Type <- this.Type
-    this.WriteObject comment
+  override this.ProcessRecord () = this.WriteObject (Comment (
+    nonNull this.Author,
+    Content = this.Content,
+    Context = this.Context,
+    Date = this.Date,
+    Permalink = this.Permalink,
+    PostModified = this.PostModified,
+    RecheckReason = this.RecheckReason,
+    Referrer = this.Referrer,
+    Type = this.Type
+  ))
 
 /// Submits the specified comment that was incorrectly marked as spam but should not have been.
 [<Cmdlet(VerbsLifecycle.Submit, "Ham"); OutputType(typeof<Void>)>]

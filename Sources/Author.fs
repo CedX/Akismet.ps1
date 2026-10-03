@@ -34,11 +34,11 @@ type NewAuthorCommand() =
   member val UserAgent = "" with get, set
 
   /// Performs execution of this command.
-  override this.ProcessRecord () =
-    let author = Author (nonNull this.IPAddress)
-    author.Email <- this.Email
-    author.Name <- this.Name
-    author.Role <- this.Role
-    author.Url <- this.Url
-    author.UserAgent <- this.UserAgent
-    this.WriteObject author
+  override this.ProcessRecord () = this.WriteObject (Author (
+    nonNull this.IPAddress,
+    Email = this.Email,
+    Name = this.Name,
+    Role = this.Role,
+    Url = this.Url,
+    UserAgent = this.UserAgent
+  ))

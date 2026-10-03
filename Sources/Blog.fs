@@ -22,8 +22,8 @@ type NewBlogCommand() =
   member val Languages = [||] with get, set
 
   /// Performs execution of this command.
-  override this.ProcessRecord () =
-    let blog = Blog (nonNull this.Url)
-    blog.Charset <- if this.Charset.Length > 0 then withNull (Encoding.GetEncoding this.Charset) else null
-    blog.Languages <- this.Languages
-    this.WriteObject blog
+  override this.ProcessRecord () = this.WriteObject (Blog (
+    nonNull this.Url,
+    Charset = (if this.Charset.Length > 0 then withNull (Encoding.GetEncoding this.Charset) else null),
+    Languages = this.Languages
+  ))

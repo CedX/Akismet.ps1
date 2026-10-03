@@ -10,7 +10,7 @@ type CloseClientCommand() =
   inherit Cmdlet()
 
   /// The Akismet client to dispose.
-  [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)]
+  [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)>]
   member val InputObject: Client | null = null with get, set
 
   /// Performs execution of this command.
@@ -45,12 +45,13 @@ type NewClientCommand() =
   member val WhatIf = SwitchParameter false with get, set
 
   /// Performs execution of this command.
-  override this.ProcessRecord () =
-    let client = new Client(this.ApiKey, nonNull this.Blog)
-    client.BaseUrl <- this.Uri
-    client.IsTest <- this.WhatIf
-    client.UserAgent <- this.UserAgent
-    this.WriteObject client
+  override this.ProcessRecord () = this.WriteObject (new Client(
+    this.ApiKey,
+    nonNull this.Blog,
+    BaseUrl = this.Uri,
+    IsTest = this.WhatIf,
+    UserAgent = this.UserAgent
+  ))
 
 /// Checks the API key against the service database, and returns a value indicating whether it is valid.
 [<Cmdlet(VerbsDiagnostic.Test, "ApiKey"); OutputType(typeof<bool>)>]
