@@ -11,11 +11,11 @@
 	GUID = "f986768a-1709-4142-815e-ce3be0db833e"
 
 	AliasesToExport = @()
-	CmdletsToExport = @()
+	FunctionsToExport = @()
 	RequiredAssemblies = , "Binaries/Belin.Akismet.dll"
 	VariablesToExport = @()
 
-	FunctionsToExport = @(
+	CmdletsToExport = @(
 		"Close-Client"
 		"New-Author"
 		"New-Blog"
