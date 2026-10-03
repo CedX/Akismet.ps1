@@ -31,5 +31,7 @@
 		<Compile Include="Validation.fs" />
 		<Compile Include="Author.fs" />
 		<Compile Include="Blog.fs" />
+		<Compile Include="Client.fs" />
+		<!-- <Compile Include="Comment.fs" /> -->
 	</ItemGroup>
 </Project>
