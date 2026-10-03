@@ -28,6 +28,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Include="Validation.fs" />
 		<Compile Include="Author.fs" />
+		<Compile Include="Blog.fs" />
 	</ItemGroup>
 </Project>
