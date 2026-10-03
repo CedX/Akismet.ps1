@@ -28,6 +28,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!-- <Compile Include="SourceFile.fs" /> -->
+		<Compile Include="Author.fs" />
 	</ItemGroup>
 </Project>
