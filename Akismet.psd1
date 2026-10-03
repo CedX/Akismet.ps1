@@ -1,8 +1,8 @@
 @{
 	DefaultCommandPrefix = "Akismet"
-	ModuleVersion = "3.0.0"
+	ModuleVersion = "4.0.0"
 	PowerShellVersion = "7.6"
-	RootModule = "Sources/Main.psm1"
+	RootModule = "Binaries/Belin.Akismet.PowerShell.dll"
 
 	Author = "Cédric Belin <cedx@outlook.com>"
 	CompanyName = "Cedric-Belin.fr"
