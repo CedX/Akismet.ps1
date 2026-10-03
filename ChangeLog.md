@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [4.0.0](https://github.com/CedX/Akismet.ps1/compare/v3.0.0...v4.0.0)
+- Ported the cmdlets to [F#](https://learn.microsoft.com/en-us/dotnet/fsharp).
+
 ## Version [3.0.0](https://github.com/CedX/Akismet.ps1/compare/v2.0.1...v3.0.0)
 - Breaking change: the underlying `Client` class now implements the `IDisposable` interface.
 - Added the `Close-Client` cmdlet.
