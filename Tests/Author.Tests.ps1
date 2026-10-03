@@ -8,8 +8,8 @@ Describe "New-Author" {
 	Context "ToHashtable" {
 		It "should return only the IP address with a newly created instance" {
 			$hashtable = [hashtable] (New-AkismetAuthor -IPAddress "127.0.0.1")
-			Should-BeHashtable $hashtable -Count 1
-			Should-BeString "127.0.0.1" $hashtable.user_ip
+			$hashtable | Should-BeHashtable -Count 1
+			$hashtable.user_ip | Should-BeString "127.0.0.1"
 		}
 
 		It "should return a non-empty hash table with an initialized instance" {
@@ -21,12 +21,12 @@ Describe "New-Author" {
 				-UserAgent "Mozilla/5.0"
 
 			$hashtable = [hashtable] $author
-			Should-BeHashtable $hashtable -Count 5
-			Should-BeString "Cédric Belin" $hashtable.comment_author -CaseSensitive
-			Should-BeString "contact@cedric-belin.fr" $hashtable.comment_author_email -CaseSensitive
-			Should-BeString "https://cedric-belin.fr/" $hashtable.comment_author_url -CaseSensitive
-			Should-BeString "Mozilla/5.0" $hashtable.user_agent -CaseSensitive
-			Should-BeString "192.168.0.1" $hashtable.user_ip
+			$hashtable | Should-BeHashtable -Count 5
+			$hashtable.comment_author | Should-BeString "Cédric Belin" -CaseSensitive
+			$hashtable.comment_author_email | Should-BeString "contact@cedric-belin.fr" -CaseSensitive
+			$hashtable.comment_author_url | Should-BeString "https://cedric-belin.fr/" -CaseSensitive
+			$hashtable.user_agent | Should-BeString "Mozilla/5.0" -CaseSensitive
+			$hashtable.user_ip | Should-BeString "192.168.0.1"
 		}
 	}
 }
