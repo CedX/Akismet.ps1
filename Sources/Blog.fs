@@ -24,6 +24,6 @@ type NewBlogCommand() =
   /// Performs execution of this command.
   override this.ProcessRecord () = this.WriteObject (Blog (
     nonNull this.Url,
-    Charset = (if this.Charset.Length > 0 then withNull (Encoding.GetEncoding this.Charset) else null),
+    Charset = (match this.Charset.Length with 0 -> null | _ -> Encoding.GetEncoding this.Charset),
     Languages = this.Languages
   ))
