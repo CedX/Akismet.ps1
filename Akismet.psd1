@@ -1,6 +1,6 @@
 @{
 	DefaultCommandPrefix = "Akismet"
-	ModuleVersion = "4.0.0"
+	ModuleVersion = "4.0.1"
 	PowerShellVersion = "7.6"
 	RootModule = "Binaries/Belin.Akismet.PowerShell.dll"
 
