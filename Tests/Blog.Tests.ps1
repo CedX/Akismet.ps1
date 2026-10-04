@@ -23,5 +23,9 @@ Describe "New-Blog" {
 			$hashtable.blog_charset | Should-BeString "utf-8" -CaseSensitive
 			$hashtable.blog_lang | Should-BeString "en,fr" -CaseSensitive
 		}
+
+		It "should throw an error if the character encoding is invalid" {
+			{ New-AkismetBlog "https://github.com/CedX/Akismet.ps1" -Charset FooBar -ErrorAction Stop } | Should-Throw
+		}
 	}
 }
