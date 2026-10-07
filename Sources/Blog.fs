@@ -6,7 +6,7 @@ open System.Text
 
 /// Creates a new blog.
 [<Cmdlet(VerbsCommon.New, "Blog"); OutputType(typeof<Blog>)>]
-type NewBlogCommand() =
+type NewBlog() =
   inherit Cmdlet()
 
   /// The blog or site URL.

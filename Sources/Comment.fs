@@ -6,7 +6,7 @@ open System.Net.Http
 
 /// Creates a new comment.
 [<Cmdlet(VerbsCommon.New, "Comment"); OutputType(typeof<Comment>)>]
-type NewCommentCommand() =
+type NewComment() =
   inherit Cmdlet()
 
   /// The comment's author.
@@ -60,7 +60,7 @@ type NewCommentCommand() =
 
 /// Submits the specified comment that was incorrectly marked as spam but should not have been.
 [<Cmdlet(VerbsLifecycle.Submit, "Ham"); OutputType(typeof<Void>)>]
-type SubmitHamCommand() =
+type SubmitHam() =
   inherit Cmdlet()
 
   /// The comment to be submitted.
@@ -79,7 +79,7 @@ type SubmitHamCommand() =
 
 /// Submits the specified comment that was not marked as spam but should have been.
 [<Cmdlet(VerbsLifecycle.Submit, "Spam"); OutputType(typeof<Void>)>]
-type SubmitSpamCommand() =
+type SubmitSpam() =
   inherit Cmdlet()
 
   /// The comment to be submitted.
@@ -98,7 +98,7 @@ type SubmitSpamCommand() =
 
 /// Checks the specified comment against the service database, and returns a value indicating whether it is spam.
 [<Cmdlet(VerbsDiagnostic.Test, "Comment"); OutputType(typeof<CheckResult>)>]
-type TestCommentCommand() =
+type TestComment() =
   inherit Cmdlet()
 
   /// The comment to be submitted.

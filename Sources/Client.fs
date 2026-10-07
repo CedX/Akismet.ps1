@@ -6,7 +6,7 @@ open System.Net.Http
 
 /// Releases the resources associated with the specified client.
 [<Cmdlet(VerbsCommon.Close, "Client"); OutputType(typeof<Void>)>]
-type CloseClientCommand() =
+type CloseClient() =
   inherit Cmdlet()
 
   /// The Akismet client to dispose.
@@ -18,11 +18,11 @@ type CloseClientCommand() =
 
 /// Creates a new Akismet client.
 [<Cmdlet(VerbsCommon.New, "Client"); OutputType(typeof<Client>)>]
-type NewClientCommand() =
+type NewClient() =
   inherit Cmdlet()
 
   /// The assembly version.
-  static let version = SemanticVersion (typeof<NewClientCommand>.Assembly.GetName().Version)
+  static let version = SemanticVersion (typeof<NewClient>.Assembly.GetName().Version)
 
   /// The Akismet API key.
   [<Parameter(Mandatory = true, Position = 1)>]
@@ -55,7 +55,7 @@ type NewClientCommand() =
 
 /// Checks the API key against the service database, and returns a value indicating whether it is valid.
 [<Cmdlet(VerbsDiagnostic.Test, "ApiKey"); OutputType(typeof<bool>)>]
-type TestApiKeyCommand() =
+type TestApiKey() =
   inherit Cmdlet()
 
   /// The Akismet API key.

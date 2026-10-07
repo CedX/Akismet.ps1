@@ -6,7 +6,7 @@ open System.Net
 
 /// Creates a new author.
 [<Cmdlet(VerbsCommon.New, "Author"); OutputType(typeof<Author>)>]
-type NewAuthorCommand() =
+type NewAuthor() =
   inherit Cmdlet()
 
   /// The author's IP address.
