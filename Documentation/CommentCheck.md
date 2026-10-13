@@ -22,7 +22,7 @@ The `[Client]` instance used to submit the comment.
 The `[Comment]` providing the user's message to be checked.
 
 ## Return value
-A `[CheckResult]` value indicating whether the given `Comment` is `"Ham"`, `"Spam"` or `"PervasiveSpam"`.
+A `[CheckResult]` value indicating whether the given `Comment` is `Ham`, `Spam` or `PervasiveSpam`.
 
 > [!TIP]
 > A comment classified as `"PervasiveSpam"` can be safely discarded.
