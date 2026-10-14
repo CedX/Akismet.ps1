@@ -22,9 +22,9 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="$(RootNamespace).Tests" />
-		<PackageReference Update="FSharp.Core" Version="10.1.401" />
+		<PackageReference Update="FSharp.Core" Version="10.1.402" />
 		<PackageReference Include="Belin.Akismet" Version="6.0.0" />
-		<PackageReference Include="System.Management.Automation" Version="7.6.6" />
+		<PackageReference Include="System.Management.Automation" Version="7.6.7" />
 	</ItemGroup>
 
 	<ItemGroup>
