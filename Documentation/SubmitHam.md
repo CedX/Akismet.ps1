@@ -34,7 +34,7 @@ See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) 
 
 ## Example
 ```powershell
-using module Belin.Akismet
+Import-Module Belin.Akismet
 
 $author = New-AkismetAuthor -IPAddress "192.168.0.1" -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:156.0) Gecko/20100101 Firefox/156.0"
 $comment = New-AkismetComment "I'm testing out the Service API." -Author $author

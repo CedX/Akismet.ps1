@@ -24,5 +24,5 @@ Install-PSResource Belin.Akismet -Repository PSGallery
 Now in your [PowerShell](https://learn.microsoft.com/en-us/powershell) code, you can use:
 
 ```powershell
-using module Belin.Akismet
+Import-Module Belin.Akismet
 ```

@@ -36,7 +36,7 @@ See [Response Error Codes](https://akismet.com/developers/detailed-docs/errors) 
 
 ## Example
 ```powershell
-using module Belin.Akismet
+Import-Module Belin.Akismet
 
 $author = @{
   Email = "john.doe@domain.com"
