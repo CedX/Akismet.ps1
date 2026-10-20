@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [2026.12.0](https://github.com/CedX/Akismet.ps1/compare/v2026.11.0...v2026.12.0)
+- Updated the package dependencies.
+
 ## Version [2026.11.0](https://github.com/CedX/Akismet.ps1/compare/v4.0.1...v2026.11.0)
 - Switched to a year-based versioning.
 - Updated the package dependencies.
