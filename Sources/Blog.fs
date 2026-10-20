@@ -25,5 +25,5 @@ type NewBlog() =
   override this.ProcessRecord () = this.WriteObject (Blog (
     nonNull this.Url,
     Charset = (match this.Charset.Length with 0 -> null | _ -> Encoding.GetEncoding this.Charset),
-    Languages = this.Languages
+    Languages = ResizeArray this.Languages
   ))

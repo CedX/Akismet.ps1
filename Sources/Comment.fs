@@ -49,7 +49,7 @@ type NewComment() =
   override this.ProcessRecord () = this.WriteObject (Comment (
     nonNull this.Author,
     Content = this.Content,
-    Context = this.Context,
+    Context = ResizeArray this.Context,
     Date = this.Date,
     Permalink = this.Permalink,
     PostModified = this.PostModified,
