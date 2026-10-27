@@ -1,7 +1,7 @@
 using module PSScriptAnalyzer
 using module ./Tools.psm1
 
-"Performing the static analysis of source code..."
+Write-Information "Performing the static analysis of source code..."
 Invoke-FSharpLint Akismet.slnx -Configuration Configuration/FSharpLint.json
 $PSScriptRoot, "Tests" | Invoke-ScriptAnalyzer -Recurse
 Test-ModuleManifest Akismet.psd1 | Out-Null
