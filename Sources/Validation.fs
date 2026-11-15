@@ -12,7 +12,7 @@ type ValidateEncodingAttribute(errorMessage: string) =
   override _.Validate(arguments: obj, _: EngineIntrinsics) =
     let exists =
       match arguments with
-      | :? string as name -> String.IsNullOrEmpty name || Encoding.GetEncodings() |> Array.exists (fun encoding -> encoding.Name = name)
+      | :? string as name -> String.IsNullOrEmpty name || Encoding.GetEncodings() |> Seq.exists (fun encoding -> encoding.Name = name)
       | _ -> false
 
     if not exists then raise (ValidationMetadataException errorMessage)
