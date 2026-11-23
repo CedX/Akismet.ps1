@@ -11,7 +11,7 @@ type CloseClient() =
 
   /// The Akismet client to dispose.
   [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)>]
-  member val InputObject: Client | null = null with get, set
+  member val InputObject: Client|null = null with get, set
 
   /// Performs execution of this command.
   override this.ProcessRecord () = (nonNull this.InputObject).Dispose()
@@ -30,7 +30,7 @@ type NewClient() =
 
   /// The front page or home URL of the instance making requests.
   [<Parameter(Mandatory = true)>]
-  member val Blog: Blog | null = null with get, set
+  member val Blog: Blog|null = null with get, set
 
   /// The user agent string to use when making requests.
   [<Parameter; ValidateNotNullOrWhiteSpace>]
@@ -64,7 +64,7 @@ type TestApiKey() =
 
   /// The front page or home URL of the instance making requests.
   [<Parameter(Mandatory = true)>]
-  member val Blog: Blog | null = null with get, set
+  member val Blog: Blog|null = null with get, set
 
   /// Performs execution of this command.
   override this.ProcessRecord () =

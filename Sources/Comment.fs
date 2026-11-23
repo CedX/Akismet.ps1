@@ -11,7 +11,7 @@ type NewComment() =
 
   /// The comment's author.
   [<Parameter(Mandatory = true)>]
-  member val Author: Author | null = null with get, set
+  member val Author: Author|null = null with get, set
 
   /// The comment's content.
   [<Parameter(Position = 1); ValidateNotNull>]
@@ -27,7 +27,7 @@ type NewComment() =
 
   /// The permanent location of the entry the comment is submitted to.
   [<Parameter>]
-  member val Permalink: Uri | null = null with get, set
+  member val Permalink: Uri|null = null with get, set
 
   /// The UTC timestamp of the publication time for the post, page or thread on which the comment was posted.
   [<Parameter>]
@@ -39,7 +39,7 @@ type NewComment() =
 
   /// The URL of the webpage that linked to the entry being requested.
   [<Parameter>]
-  member val Referrer: Uri | null = null with get, set
+  member val Referrer: Uri|null = null with get, set
 
   /// The comment's type.
   [<Parameter; ValidateNotNull>]
@@ -65,11 +65,11 @@ type SubmitHam() =
 
   /// The comment to be submitted.
   [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)>]
-  member val Comment: Comment | null = null with get, set
+  member val Comment: Comment|null = null with get, set
 
   /// The Akismet client used to submit the comment.
   [<Parameter(Mandatory = true)>]
-  member val Client: Client | null = null with get, set
+  member val Client: Client|null = null with get, set
 
   /// Performs execution of this command.
   override this.ProcessRecord () =
@@ -84,11 +84,11 @@ type SubmitSpam() =
 
   /// The comment to be submitted.
   [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)>]
-  member val Comment: Comment | null = null with get, set
+  member val Comment: Comment|null = null with get, set
 
   /// The Akismet client used to submit the comment.
   [<Parameter(Mandatory = true)>]
-  member val Client: Client | null = null with get, set
+  member val Client: Client|null = null with get, set
 
   /// Performs execution of this command.
   override this.ProcessRecord () =
@@ -103,11 +103,11 @@ type TestComment() =
 
   /// The comment to be submitted.
   [<Parameter(Mandatory = true, Position = 1, ValueFromPipeline = true)>]
-  member val Comment: Comment | null = null with get, set
+  member val Comment: Comment|null = null with get, set
 
   /// The Akismet client used to submit the comment.
   [<Parameter(Mandatory = true)>]
-  member val Client: Client | null = null with get, set
+  member val Client: Client|null = null with get, set
 
   /// Performs execution of this command.
   override this.ProcessRecord () =

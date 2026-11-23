@@ -11,7 +11,7 @@ type NewAuthor() =
 
   /// The author's IP address.
   [<Parameter(Mandatory = true)>]
-  member val IPAddress: IPAddress | null = null with get, set
+  member val IPAddress: IPAddress|null = null with get, set
 
   /// The author's name. If you set it to `"viagra-test-123"`, Akismet will always return `true`.
   [<Parameter(Position = 1); ValidateNotNull>]
@@ -27,7 +27,7 @@ type NewAuthor() =
 
   /// The URL of the author's website.
   [<Parameter>]
-  member val Url: Uri | null = null with get, set
+  member val Url: Uri|null = null with get, set
 
   /// The author's user agent, that is the string identifying the Web browser used to submit comments.
   [<Parameter; ValidateNotNull>]

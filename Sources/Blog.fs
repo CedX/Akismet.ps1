@@ -11,7 +11,7 @@ type NewBlog() =
 
   /// The blog or site URL.
   [<Parameter(Mandatory = true, Position = 1)>]
-  member val Url: Uri | null = null with get, set
+  member val Url: Uri|null = null with get, set
 
   /// The character encoding for the values included in comments.
   [<Parameter; ValidateEncoding("The specified character encoding is unknown.")>]
